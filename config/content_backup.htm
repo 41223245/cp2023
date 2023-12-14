@@ -1,6 +1,55 @@
 <h1>About</h1>
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a></span></span></p>
-<h1>USA</h1>
+<h1>w5</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 包含標準輸出入程式庫的標頭文件</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://blog.csdn.net/weixin_38468077/article/details/101069365</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// http://www.gnuplot.info/demo/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://github.com/sysprog21/rv32emu</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://github.com/sysprog21/semu</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://docs.google.com/presentation/d/14N0cWG2SnBSqhc2cLF0_2VerB9FF8JN3</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://cs61c.org/fa23/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://greenteapress.com/wp/think-python-2e/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://github.com/ecalvadi/c99-examples</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://github.com/gouravthakur39/beginners-C-program-examples</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://github.com/ergenekonyigit/Numerical-Analysis-Examples</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://www.che.ncku.edu.tw/facultyweb/changct/html/teaching/CPPandMATLAB/Past/pdf%20Files/Chap02-Ling.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://gteceducation.com.sg/Brochures/PROGRAMMING/C%20PROGRAMMING%20FULL.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://jsomers.github.io/cbook/cbook.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://jsomers.github.io/cbook/index.html</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// http://student.itee.uq.edu.au/courses/csse2310/CProgrammingNotes.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// http://cslibrary.stanford.edu/101/EssentialC.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://publications.gbdirect.co.uk/c_book/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// https://www.fossil-scm.org/fossil-book/doc/2ndEdition/fossilbook.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// ***** 在 replit 上執行</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// CD 下載</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// cc gnuplot_ex1.c -o gnuplot_ex1</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// ./gnuplot_ex1</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;stdio.h&gt;</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+// 主函式</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 使用 popen 啟動 Gnuplot 進程</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    如果（！gnuplotPipe）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        fprintf(stderr, "無法啟動 Gnuplot。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        返回1；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    }</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 使用Gnuplot繪圖指令，指定字型並輸出為PNG</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    fprintf(gnuplotPipe, "設定終端 png 字體 '預設,10' 大小 800,400\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    fprintf(gnuplotPipe, "設定輸出 './../images/gnuplot_ex1.png'\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    fprintf(gnuplotPipe, "繪製 sin(x)");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    // 關閉popen</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    pclose(gnuplotPipe);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    返回0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span></pre>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">清除</span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">光碟下載</span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">抄送 gnuplot_ex1.c</span></span></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.輸出</span></span></p>
+<p><span style="vertical-align: inherit;"><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></span></p>
+<h1>w6</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -89,8 +138,7 @@ void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotatio
     // 用指定的颜色填充星星
     gdImageFilledPolygon(img, points, 10, color);
 }</pre>
-<p><img alt="" height="400" src="/images/usa_flag.png" width="758"/></p>
-<h1>ROC</h1>
+<p><img caption="false" height="211" src="/images/usa_flag.png" width="400"/></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -174,56 +222,313 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
     // 繪製太陽內部
     gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.1, sun_radius * 1.1, white);
 }</pre>
-<img alt="" height="400" src="/images/roc_flag.png" width="599"/>
-<h1>w5</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">// 包含標準輸出入程式庫的標頭文件</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://blog.csdn.net/weixin_38468077/article/details/101069365</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// http://www.gnuplot.info/demo/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://github.com/sysprog21/rv32emu</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://github.com/sysprog21/semu</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://docs.google.com/presentation/d/14N0cWG2SnBSqhc2cLF0_2VerB9FF8JN3</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://cs61c.org/fa23/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://greenteapress.com/wp/think-python-2e/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://github.com/ecalvadi/c99-examples</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://github.com/gouravthakur39/beginners-C-program-examples</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://github.com/ergenekonyigit/Numerical-Analysis-Examples</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://www.che.ncku.edu.tw/facultyweb/changct/html/teaching/CPPandMATLAB/Past/pdf%20Files/Chap02-Ling.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://gteceducation.com.sg/Brochures/PROGRAMMING/C%20PROGRAMMING%20FULL.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://jsomers.github.io/cbook/cbook.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://jsomers.github.io/cbook/index.html</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// http://student.itee.uq.edu.au/courses/csse2310/CProgrammingNotes.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// http://cslibrary.stanford.edu/101/EssentialC.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://publications.gbdirect.co.uk/c_book/</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// https://www.fossil-scm.org/fossil-book/doc/2ndEdition/fossilbook.pdf</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// ***** 在 replit 上執行</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// CD 下載</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// cc gnuplot_ex1.c -o gnuplot_ex1</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// ./gnuplot_ex1</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-#include &lt;stdio.h&gt;</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-// 主函式</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用 popen 啟動 Gnuplot 進程</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    如果（！gnuplotPipe）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        fprintf(stderr, "無法啟動 Gnuplot。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-        返回1；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    }</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 使用Gnuplot繪圖指令，指定字型並輸出為PNG</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "設定終端 png 字體 '預設,10' 大小 800,400\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "設定輸出 './../images/gnuplot_ex1.png'\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    fprintf(gnuplotPipe, "繪製 sin(x)");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    // 關閉popen</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    pclose(gnuplotPipe);</span></span><span></span>
-<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-    返回0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
-}</span></span></pre>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">清除</span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">光碟下載</span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">抄送 gnuplot_ex1.c</span></span></p>
-<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.輸出</span></span></p>
-<p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p>
+<p><img caption="false" height="267" src="/images/roc_flag.png" width="400"/></p>
+<h1>w7</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+#include &lt;math.h&gt;
+
+void draw_uk_flag(gdImagePtr img);
+void fillTriangle(gdImagePtr img, int x1, int y1, int x2, int y2, int x3, int y3, int color);
+
+int main() {
+// 设置国旗的宽和高
+int width = 1200;
+int height = width / 2;
+
+// 创建图像
+gdImagePtr img = gdImageCreateTrueColor(width, height);
+gdImageAlphaBlending(img, 0);
+
+// 绘制英国国旗
+draw_uk_flag(img);
+
+// 将图像保存到文件
+FILE *outputFile = fopen("./../images/uk_flag.png", "wb");
+if (outputFile == NULL) {
+fprintf(stderr, "打开输出文件时发生错误。\n");
+return 1;
+}
+gdImagePngEx(img, outputFile, 9);
+fclose(outputFile);
+gdImageDestroy(img);
+return 0;
+}
+
+
+
+void draw_uk_flag(gdImagePtr img) {
+int width = gdImageSX(img);
+int height = gdImageSY(img);
+
+int red, white, blue;
+red = gdImageColorAllocate(img, 204, 0, 0); // 红色
+white = gdImageColorAllocate(img, 255, 255, 255); // 白色
+blue = gdImageColorAllocate(img, 0, 0, 153); // 蓝色
+
+gdImageFilledRectangle(img, 0, 0, width, height, blue);
+
+
+int x1, y1, x2, y2, x3, y3;
+{
+int line_thickness = 100;
+gdImageSetThickness(img, line_thickness);
+
+int x1, y1, x2, y2, x3, y3;
+
+// 绘制白色斜线
+x1 = 0;
+y1 = 600;
+x2 = 1200;
+y2 = 0;
+gdImageLine(img, x1, y1, x2, y2, white);
+
+x1 = 0;
+y1 = 0;
+x2 = 1200;
+y2 = 600;
+gdImageLine(img, x1, y1, x2, y2, white);
+}
+{
+int line_thickness = 33;
+gdImageSetThickness(img, line_thickness);
+
+
+// 绘制红色斜线
+x1 = 566;
+y1 = 300;
+x2 = 1166;
+y2 = 0;
+gdImageLine(img, x1, y1, x2, y2, red);
+
+x1 = 1233;
+y1 = 600;
+x2 = 633;
+y2 = 300;
+gdImageLine(img, x1, y1, x2, y2, red);
+
+x1 = 566;
+y1 = 300;
+x2 = -33;
+y2 = 0;
+gdImageLine(img, x1, y1, x2, y2, red);
+
+x1 = 600;
+y1 = 316.5;
+x2 = 0;
+y2 = 616.5;
+gdImageLine(img, x1, y1, x2, y2, red);
+}
+{
+int line_thickness = 33;
+gdImageSetThickness(img, line_thickness);
+
+int x1, y1, x2, y2, x3, y3;
+
+// 绘制 斜线
+x1 = 0;
+y1 = 600;
+x2 = 1200;
+y2 = 0;
+gdImageLine(img, x1, y1, x2, y2, red );
+
+
+x1 = 1200;
+y1 = 16.5;
+x2 = 600;
+y2 = 316.5;
+gdImageLine(img, x1, y1, x2, y2, white);
+
+
+x1 = 0;
+y1 = 583.5;
+x2 = 600;
+y2 = 283.5;
+gdImageLine(img, x1, y1, x2, y2, white);
+
+
+}
+
+// 绘制白色十字
+int cross_width = width / 32;
+int cross_arm_width = width / 32;
+int center_x = width / 2;
+int center_y = height / 2;
+
+gdImageFilledRectangle(img, center_x + 2.7 * cross_width, 0, center_x - 2.7 * cross_width, height, white);
+gdImageFilledRectangle(img, 0, center_y + 2.7 * cross_arm_width, width, center_y - 2.7 * cross_arm_width, white);
+
+// 绘制红色十字
+gdImageFilledRectangle(img, center_x + 1.5 * cross_width, 0, center_x - 1.5 * cross_width, height, red);
+gdImageFilledRectangle(img, 0, center_y + 1.5 * cross_arm_width, width, center_y - 1.5 * cross_arm_width, red);
+}</pre>
+<p></p>
+<p><img alt="" height="200" src="/images/uk_flag.png" width="400"/></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+#include &lt;math.h&gt;
+
+void draw_japan_flag(gdImagePtr img);
+void draw_red_sun(gdImagePtr img, int x, int y, int size, int color);
+
+int main() {
+int originalWidth = 1200;
+int originalHeight = (int)(originalWidth * 2.0 / 3.0);
+gdImagePtr img = gdImageCreateTrueColor(originalWidth, originalHeight);
+gdImageAlphaBlending(img, 0);
+
+draw_japan_flag(img);
+
+// 新的宽度和高度以适应 "images" 文件夹
+int newWidth = 600;
+int newHeight = (int)(newWidth * 2.0 / 3.0);
+
+// 创建新图像并进行缩放
+gdImagePtr resizedImage = gdImageCreateTrueColor(newWidth, newHeight);
+gdImageAlphaBlending(resizedImage, 0);
+gdImageCopyResampled(resizedImage, img, 0, 0, 0, 0, newWidth, newHeight, originalWidth, originalHeight);
+
+FILE *outputFile = fopen("./../images/japan_flag.png", "wb");
+if (outputFile == NULL) {
+fprintf(stderr, "Error opening the output file.\n");
+return 1;
+}
+gdImagePng(resizedImage, outputFile);
+fclose(outputFile);
+gdImageDestroy(img);
+gdImageDestroy(resizedImage);
+
+return 0;
+}
+
+void draw_japan_flag(gdImagePtr img) {
+int width = gdImageSX(img);
+int height = gdImageSY(img);
+
+// 创建一个白色背景
+int white = gdImageColorAllocate(img, 255, 255, 255);
+gdImageFilledRectangle(img, 0, 0, width - 1, height - 1, white);
+
+// 绘制红色圆圈（太阳）
+int red = gdImageColorAllocate(img, 255, 0, 0);
+int center_x = width / 2;
+int center_y = height / 2;
+int radius = (int)((width * 2) / 3);
+draw_red_sun(img, center_x, center_y, radius, red);
+}
+
+void draw_red_sun(gdImagePtr img, int x, int y, int size, int color) {
+// 減小 size 的值,例如將他的值減半
+size = size / 2;
+gdImageArc(img, x, y, size, size, 0, 360, color);
+gdImageFillToBorder(img, x, y, color, color);
+}
+
+</pre>
+<p><img alt="" height="267" src="/images/japan_flag.png" width="400"/></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+#include &lt;math.h&gt;
+
+void draw_chinese_flag(gdImagePtr img);
+
+int main() {
+int width = 300; // 國旗寬度
+int height = 200; // 國旗高度
+
+gdImagePtr im = gdImageCreateTrueColor(width, height);
+gdImageAlphaBlending(im, 0);
+
+draw_chinese_flag(im);
+
+FILE *outputFile = fopen("./../images/proc_flag.png", "wb");
+if (outputFile == NULL) {
+fprintf(stderr, "打开输出文件时出错。\n");
+return 1;
+}
+
+gdImagePngEx(im, outputFile, 9);
+fclose(outputFile);
+gdImageDestroy(im);
+
+return 0;
+}
+
+// 声明 draw_star 函数
+void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle);
+
+void draw_chinese_flag(gdImagePtr img) {
+int width = gdImageSX(img);
+int height = gdImageSY(img);
+int red, yellow;
+
+// 國旗顏色
+red = gdImageColorAllocate(img, 255, 0, 0); // 紅色背景
+yellow = gdImageColorAllocate(img, 255, 255, 0); // 黃色星星
+
+// 畫紅色背景
+gdImageFilledRectangle(img, 0, 0, width, height, red);
+
+// 設置星星的大小和位置
+int star_size = (int)(0.28 * height);
+int star_x = (int)(0.165 * width);
+int star_y = (int)(0.265 * height);
+
+// 畫大星星
+draw_star(img, star_x, star_y, star_size, yellow, 11.0);
+
+// 繪製小星星，位置根據實際國旗比例計算
+double radius = 0.15 * height;
+double angle = 360 / 7 * M_PI / 179.0;
+double rotation = -M_PI / 7.5;
+int cx = (int)(0.32 * width);
+int cy = (int)(0.27 * height);
+
+for (int i = -1; i &lt; 3; i++) {
+int x = (int)(cx + radius * cos(i * angle + rotation));
+int y = (int)(cy + radius * sin(i * angle + rotation));
+draw_star(img, x, y, 19, yellow, M_PI / 5.0);
+}
+}
+
+void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle) {
+gdPoint points[10];
+
+// 计算星形的五个外点和五个内点
+double outer_radius = size / 2;
+double inner_radius = size / 6;
+double angle = M_PI / 5.0;
+
+for (int i = 0; i &lt; 10; i++) {
+double radius = (i % 2 == 0) ? outer_radius : inner_radius;
+double theta = rotation_angle + i * angle;
+points[i].x = x + radius * cos(theta);
+points[i].y = y + radius * sin(theta);
+}
+
+// 使用 gdImageFilledPolygon 绘制星形
+gdImageFilledPolygon(img, points, 10, color);
+}</pre>
+<p></p>
+<p><img alt="" height="267" src="/images/proc_flag.png" width="400"/></p>
+<h1>Brython</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">從 1 累加到 100:
+
+1 add to 100
+
+將 iterable 與 iterator 相關說明, 利用 Brython 與 Ace Editor 整理在這個頁面.
+
+  
+Filename: 
+input file name
+.py 
+Run Output 清除輸出區清除繪圖區Reload
+
+55
+&lt;completed in   1.00 ms&gt;
+
+</pre>
+<p><br/><br/></p>
 <p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
 <p><!-- 存擋表單開始 --></p>
 <form><label><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">檔案名稱：</span></span><input id="kw_filename" placeholder="輸入檔名" type="text"/><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">.py</span></span></label> <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"><input onclick="doSave('kw_py_src1', 'kw_filename1');" type="submit" value="保存"/></span></span></form>
