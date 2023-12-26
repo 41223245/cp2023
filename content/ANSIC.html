@@ -142,7 +142,133 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w15 << <a href='w15.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>ANSIC</h1><br />w15 << <a href='w15.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+    <div id="tipue_search_content">w15 << <a href='w15.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>ANSIC</h1>
+<p><span><strong><span>1.</span></strong><span><span>編寫一個 C 程式來列印您的姓名、出生日期和手機號碼。</span></span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()  
+{
+    // Print Name
+    printf("Name   : Youngson Liu\n"); 
+
+    // Print Date of Birth
+    printf("DOB    : August 25, 2005\n"); 
+
+    // Print Mobile Number
+    printf("Mobile : 07-9999999999\n"); 
+
+    // Indicate successful execution
+    return(0); 
+}</pre>
+<p><strong><span>2.</span></strong><span><span>編寫一個C 程式來取得您正在使用的C 版本。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main(int argc, char** argv) {
+    // Check for C standard version
+    #if __STDC_VERSION__ &gt;=  201710L
+        printf("We are using C18!\n");
+    #elif __STDC_VERSION__ &gt;= 201112L
+        printf("We are using C11!\n");
+    #elif __STDC_VERSION__ &gt;= 199901L
+        printf("We are using C99!\n");
+    #else
+        printf("We are using C89/C90!\n");
+    #endif
+
+    // Indicate successful execution
+    return 0;
+}</pre>
+<p><strong><span>3.</span></strong><span><span>寫一個 C 程序，使用哈希 (#) 列印一個區塊 F，其中 F 的高度為 6 個字符，寬度為 5 個和 4 個字符。</span><span>並且還列印一個非常大的“C”。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() 
+{
+    // Print top line of pattern
+    printf("    ######\n");
+ 
+    // Print second line of pattern
+    printf("  ##      ##\n");
+ 
+    // Print lines 3 to 7 of pattern
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+ 
+    // Print bottom line of pattern
+    printf("  ##      ##\n");
+ 
+    // Print last line of pattern
+    printf("    ######\n");
+ 
+    return(0);
+}</pre>
+<p><strong><span>4.</span></strong><span><span>寫一個C 程序，反向列印下列字元。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() 
+{
+    // Declare and initialize character variables
+    char char1 = 'X';
+    char char2 = 'M';
+    char char3 = 'L';
+ 
+    // Print the original and reversed characters
+    printf("The reverse of %c%c%c is %c%c%c\n",
+        char1, char2, char3,
+        char3, char2, char1);
+ 
+    return(0);
+}
+
+</pre>
+<p><strong><span>5.</span></strong><span><span>寫一個 C 程式來計算高 7 英吋、寬 5 英吋的矩形的周長和麵積。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
+
+/* 
+   Variables to store the width and height of a rectangle in inches 
+*/
+int width;          
+int height;         
+
+int area;           /* Variable to store the area of the rectangle */
+int perimeter;      /* Variable to store the perimeter of the rectangle */
+
+int main() {
+    /* Assigning values to height and width */
+    height = 7;
+    width = 5;
+
+    /* Calculating the perimeter of the rectangle */
+    perimeter = 2*(height + width);
+    printf("Perimeter of the rectangle = %d inches\n", perimeter);
+
+    /* Calculating the area of the rectangle */
+    area = height * width;
+    printf("Area of the rectangle = %d square inches\n", area);
+
+    return(0);
+}</pre>
+<p><strong><span>6.</span></strong><span><span>寫一個 C 程式來計算給定半徑的圓的周長和麵積。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+   int radius;      /* Variable to store the radius of the circle */
+   float area, perimeter;    /* Variables to store the area and perimeter of the circle */
+   radius = 6;      /* Assigning a value to the radius */
+
+   /* Calculating the perimeter of the circle */
+   perimeter = 2 * 3.14 * radius;
+   printf("Perimeter of the Circle = %f inches\n", perimeter);
+
+   /* Calculating the area of the circle */
+   area = 3.14 * radius * radius;
+   printf("Area of the Circle = %f square inches\n", area);
+
+   return(0);
+}</pre>
+<br />w15 << <a href='w15.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">
