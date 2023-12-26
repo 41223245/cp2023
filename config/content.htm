@@ -1214,7 +1214,28 @@ int main()
 }
 </pre>
 <p>8.<span>編寫一個 C 程序，將指定的日期轉換為年、週和日</span></p>
-<div></div>
+<div>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int days, years, weeks;
+
+    days = 1329; // Total number of days
+
+    // Converts days to years, weeks and days
+    years = days/365; // Calculate years
+    weeks = (days % 365)/7; // Calculate weeks
+    days = days - ((years*365) + (weeks*7)); // Calculate remaining days
+
+    // Print the results
+    printf("Years: %d\n", years);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d \n", days);
+
+    return 0;
+}</pre>
+</div>
 <h1>Brython</h1>
 <!-- editor2 結束 --><hr/>
 <p>
