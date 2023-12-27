@@ -160,6 +160,7 @@ int main()
     // Indicate successful execution
     return(0); 
 }</pre>
+<p><img alt="" height="186" src="./../images/1.png" width="400"/></p>
 <p><strong><span>2.</span></strong><span><span>編寫一個C 程式來取得您正在使用的C 版本。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -178,6 +179,7 @@ int main(int argc, char** argv) {
     // Indicate successful execution
     return 0;
 }</pre>
+<p><img alt="" height="126" src="./../images/2.png" width="400"/></p>
 <p><strong><span>3.</span></strong><span><span>寫一個 C 程序，使用哈希 (#) 列印一個區塊 F，其中 F 的高度為 6 個字符，寬度為 5 個和 4 個字符。</span><span>並且還列印一個非常大的“C”。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
  
@@ -203,7 +205,9 @@ int main()
     printf("    ######\n");
  
     return(0);
-}</pre>
+}
+</pre>
+<p><img alt="" height="384" src="./../images/3.png" width="400"/></p>
 <p><strong><span>4.</span></strong><span><span>寫一個C 程序，反向列印下列字元。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
  
@@ -223,6 +227,7 @@ int main()
 }
 
 </pre>
+<p><img alt="" height="138" src="./../images/4.png" width="400"/></p>
 <p><strong><span>5.</span></strong><span><span>寫一個 C 程式來計算高 7 英吋、寬 5 英吋的矩形的周長和麵積。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
 
@@ -250,6 +255,7 @@ int main() {
 
     return(0);
 }</pre>
+<p><img alt="" height="108" src="./../images/5.png" width="400"/></p>
 <p><strong><span>6.</span></strong><span><span>寫一個 C 程式來計算給定半徑的圓的周長和麵積。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -268,6 +274,120 @@ int main() {
 
    return(0);
 }</pre>
+<p><img alt="" height="103" src="./../images/6.png" width="400"/></p>
+<p><strong><span>7.</span></strong><span><span>寫一個C 程式來顯示多個變數。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main()
+{
+    int a = 125, b = 12345;        /* Declare and initialize integer variables */
+    long ax = 1234567890;          /* Declare and initialize long integer variable */
+    short s = 4043;                /* Declare and initialize short integer variable */
+    float x = 2.13459;             /* Declare and initialize floating-point variable */
+    double dx = 1.1415927;         /* Declare and initialize double precision variable */
+    char c = 'W';                  /* Declare and initialize character variable */
+    unsigned long ux = 2541567890; /* Declare and initialize unsigned long integer variable */
+ 
+    /* Various arithmetic operations and type conversions */
+    printf("a + c =  %d\n", a + c);
+    printf("x + c = %f\n", x + c);
+    printf("dx + x = %f\n", dx + x);
+    printf("((int) dx) + ax =  %ld\n", ((int) dx) + ax);
+    printf("a + x = %f\n", a + x);
+    printf("s + b =  %d\n", s + b);
+    printf("ax + b = %ld\n", ax + b);
+    printf("s + c =  %hd\n", s + c);
+    printf("ax + c = %ld\n", ax + c);
+    printf("ax + ux = %lu\n", ax + ux);
+ 
+    return 0;
+}
+</pre>
+<p><img alt="" height="344" src="./../images/7.png" width="400"/></p>
+<p>8.<span>編寫一個 C 程序，將指定的日期轉換為年、週和日</span></p>
+<div>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int days, years, weeks;
+
+    days = 1329; // Total number of days
+
+    // Converts days to years, weeks and days
+    years = days/365; // Calculate years
+    weeks = (days % 365)/7; // Calculate weeks
+    days = days - ((years*365) + (weeks*7)); // Calculate remaining days
+
+    // Print the results
+    printf("Years: %d\n", years);
+    printf("Weeks: %d\n", weeks);
+    printf("Days: %d \n", days);
+
+    return 0;
+}</pre>
+<p><img alt="" height="186" src="./../images/8.png" width="400"/></p>
+<p><strong><span>9.</span></strong><span><span>寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的和。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    int x, y;
+    int result1, result2; // 用于存储 scanf 的返回值
+ 
+    // 获取第一个整数
+    printf("Input the first integer: ");
+    result1 = scanf("%d", &amp;x);
+    if (result1 != 1) {
+        printf("Error: Please enter an integer.\n");
+        return 1;
+    }
+ 
+    // 获取第二个整数
+    printf("Input the second integer: ");
+    result2 = scanf("%d", &amp;y);
+    if (result2 != 1) {
+        printf("Error: Please enter an integer.\n");
+        return 1;
+    }
+ 
+    // 计算并输出它们的和
+    printf("Sum of the two integers = %d\n", x + y);
+ 
+    return 0;
+}
+
+</pre>
+<p><img alt="" height="180" src="./../images/9.png" width="400"/></p>
+<p><strong><span>10.</span></strong><span><span>寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的乘積。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    int x, y;
+    int result_x, result_y; // 用於儲存 scanf 的返回值
+ 
+    // 獲取第一個整數
+    printf("輸入第一個整數：");
+    result_x = scanf("%d", &amp;x);
+    if (result_x != 1) {
+        printf("錯誤：請輸入整數。\n");
+        return 1;
+    }
+ 
+    // 獲取第二個整數
+    printf("輸入第二個整數：");
+    result_y = scanf("%d", &amp;y);
+    if (result_y != 1) {
+        printf("錯誤：請輸入整數。\n");
+        return 1;
+    }
+ 
+    // 計算並輸出它們的乘積
+    printf("這兩個整數的乘積 = %d\n", x * y);
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="184" src="./../images/10.png" width="400"/></p>
+</div>
 <br />w15 << <a href='w15.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->

@@ -1077,6 +1077,7 @@ int main()
     // Indicate successful execution
     return(0); 
 }</pre>
+<p><img alt="" height="186" src="/images/1.png" width="400"/></p>
 <p><strong><span>2.</span></strong><span><span>編寫一個C 程式來取得您正在使用的C 版本。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -1095,6 +1096,7 @@ int main(int argc, char** argv) {
     // Indicate successful execution
     return 0;
 }</pre>
+<p><img alt="" height="126" src="/images/2.png" width="400"/></p>
 <p><strong><span>3.</span></strong><span><span>寫一個 C 程序，使用哈希 (#) 列印一個區塊 F，其中 F 的高度為 6 個字符，寬度為 5 個和 4 個字符。</span><span>並且還列印一個非常大的“C”。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
  
@@ -1120,7 +1122,9 @@ int main()
     printf("    ######\n");
  
     return(0);
-}</pre>
+}
+</pre>
+<p><img alt="" height="384" src="/images/3.png" width="400"/></p>
 <p><strong><span>4.</span></strong><span><span>寫一個C 程序，反向列印下列字元。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
  
@@ -1140,6 +1144,7 @@ int main()
 }
 
 </pre>
+<p><img alt="" height="138" src="/images/4.png" width="400"/></p>
 <p><strong><span>5.</span></strong><span><span>寫一個 C 程式來計算高 7 英吋、寬 5 英吋的矩形的周長和麵積。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
 
@@ -1167,6 +1172,7 @@ int main() {
 
     return(0);
 }</pre>
+<p><img alt="" height="108" src="/images/5.png" width="400"/></p>
 <p><strong><span>6.</span></strong><span><span>寫一個 C 程式來計算給定半徑的圓的周長和麵積。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -1185,6 +1191,7 @@ int main() {
 
    return(0);
 }</pre>
+<p><img alt="" height="103" src="/images/6.png" width="400"/></p>
 <p><strong><span>7.</span></strong><span><span>寫一個C 程式來顯示多個變數。</span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
  
@@ -1233,6 +1240,64 @@ int main()
     printf("Weeks: %d\n", weeks);
     printf("Days: %d \n", days);
 
+    return 0;
+}</pre>
+<p><strong><span>9.</span></strong><span><span>寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的和。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    int x, y;
+    int result1, result2; // 用于存储 scanf 的返回值
+ 
+    // 获取第一个整数
+    printf("Input the first integer: ");
+    result1 = scanf("%d", &amp;x);
+    if (result1 != 1) {
+        printf("Error: Please enter an integer.\n");
+        return 1;
+    }
+ 
+    // 获取第二个整数
+    printf("Input the second integer: ");
+    result2 = scanf("%d", &amp;y);
+    if (result2 != 1) {
+        printf("Error: Please enter an integer.\n");
+        return 1;
+    }
+ 
+    // 计算并输出它们的和
+    printf("Sum of the two integers = %d\n", x + y);
+ 
+    return 0;
+}
+
+</pre>
+<p><strong><span>10.</span></strong><span><span>寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的乘積。</span></span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    int x, y;
+    int result_x, result_y; // 用於儲存 scanf 的返回值
+ 
+    // 獲取第一個整數
+    printf("輸入第一個整數：");
+    result_x = scanf("%d", &amp;x);
+    if (result_x != 1) {
+        printf("錯誤：請輸入整數。\n");
+        return 1;
+    }
+ 
+    // 獲取第二個整數
+    printf("輸入第二個整數：");
+    result_y = scanf("%d", &amp;y);
+    if (result_y != 1) {
+        printf("錯誤：請輸入整數。\n");
+        return 1;
+    }
+ 
+    // 計算並輸出它們的乘積
+    printf("這兩個整數的乘積 = %d\n", x * y);
+ 
     return 0;
 }</pre>
 </div>
