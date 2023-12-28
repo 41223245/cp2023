@@ -142,8 +142,139 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w5 << <a href='w5.html'>Previous</a> <a href='USA.html'>Next</a> >> USA<br /><h1>w6</h1>
-<br />w5 << <a href='w5.html'>Previous</a> <a href='USA.html'>Next</a> >> USA</div>
+    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>c_ex</h1>
+<p><span>1.Say Hello World!.</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+ /* 印出 Hello */
+printf("Hello World!");
+}</pre>
+<p><img alt="" height="81" src="./../images/2-1.png" width="400"/></p>
+<p>2.Say Hello World! Bye Bye.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+/* 印出 Hello World! Bye Bye */
+printf("Hello World! ");
+printf("Bye ");
+printf("Bye");
+return 0;
+}</pre>
+<p><img alt="" height="80" src="./../images/2-2.png" width="400"/></p>
+<p>3.變數宣告的例子</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 1;
+int A = 8;
+int b = 2, c;
+c = A - a + b;
+/* 輸出 a, A, b, c 到螢幕 */
+printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );
+return 0;
+}</pre>
+<p><img alt="" height="59" src="./../images/2-3.png" width="400"/></p>
+<p>4.浮點運算的程式範例</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+float a = 0.5;
+double b = 1.2;
+int c = 3;
+b = b + a + c;
+/* 輸出 a, b, c 到螢幕 */
+printf( " a = %3.1f, b = %3.1f, c = %d ", a ,b, c );
+}</pre>
+<p><img alt="" height="52" src="./../images/2-4.png" width="400"/></p>
+<p>5.字元範例</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+char x, y;
+x = 'a';
+y = (char)97;
+/* 輸出 x, y, x, 最後一個是以 ASCII 值顯示 y */
+printf( " x = %c, y = %c, ASCII of y = %d", x, y, y );
+return 0;
+}</pre>
+<p><img alt="" height="61" src="./../images/2-5.png" width="400"/></p>
+<p>6.digital</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    int a = 64;
+    int b = 0x40;
+    long c = 64L;
+ 
+    printf("%d,%d,%ld", a, b, c);  // 使用 %ld 來打印 long 整數型別的變數 c
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="49" src="./../images/2-6.png" width="400"/></p>
+<p>7.輸入一個字元</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int i;
+printf("Input an integer:");
+scanf( "%d", &amp;i ); /* ch 前面加個 &amp;(位址運算元) */
+printf( "the number is %d", i );
+return 0;
+}</pre>
+<p><img alt="" height="101" src="./../images/2-7.png" width="400"/></p>
+<p>8.基本運算範例.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p><img alt="" height="156" src="./../images/2-8.png" width="400"/></p>
+<p>9. 關係運算元的範例.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+return 0;
+}</pre>
+<p><img alt="" height="431" src="./../images/2-9.png" width="400"/></p>
+<p>10.位元運算元的範例.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+void main()
+{
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
+}</pre>
+<p><img alt="" height="244" src="./../images/2-10.png" width="400"/></p>
+<br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
         
     <!-- footer -->
       <div class="container">

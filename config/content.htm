@@ -50,6 +50,7 @@ int main() {</span></span><span></span><span style="vertical-align: inherit;"><s
 <p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">./a.輸出</span></span></p>
 <p><span style="vertical-align: inherit;"><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></span></p>
 <h1>w6</h1>
+<h2>USA</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -139,6 +140,7 @@ void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotatio
     gdImageFilledPolygon(img, points, 10, color);
 }</pre>
 <p><img caption="false" height="211" src="/images/usa_flag.png" width="400"/></p>
+<h2>ROC</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -224,6 +226,7 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 }</pre>
 <p><img caption="false" height="267" src="/images/roc_flag.png" width="400"/></p>
 <h1>w7</h1>
+<h2>UK</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -364,6 +367,7 @@ gdImageFilledRectangle(img, 0, center_y + 1.5 * cross_arm_width, width, center_y
 }</pre>
 <p></p>
 <p><img alt="" height="200" src="/images/uk_flag.png" width="400"/></p>
+<h2>Japan</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -426,91 +430,7 @@ gdImageFillToBorder(img, x, y, color, color);
 
 </pre>
 <p><img alt="" height="267" src="/images/japan_flag.png" width="400"/></p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
-
-void draw_chinese_flag(gdImagePtr img);
-
-int main() {
-int width = 300; // 國旗寬度
-int height = 200; // 國旗高度
-
-gdImagePtr im = gdImageCreateTrueColor(width, height);
-gdImageAlphaBlending(im, 0);
-
-draw_chinese_flag(im);
-
-FILE *outputFile = fopen("./../images/proc_flag.png", "wb");
-if (outputFile == NULL) {
-fprintf(stderr, "打开输出文件时出错。\n");
-return 1;
-}
-
-gdImagePngEx(im, outputFile, 9);
-fclose(outputFile);
-gdImageDestroy(im);
-
-return 0;
-}
-
-// 声明 draw_star 函数
-void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle);
-
-void draw_chinese_flag(gdImagePtr img) {
-int width = gdImageSX(img);
-int height = gdImageSY(img);
-int red, yellow;
-
-// 國旗顏色
-red = gdImageColorAllocate(img, 255, 0, 0); // 紅色背景
-yellow = gdImageColorAllocate(img, 255, 255, 0); // 黃色星星
-
-// 畫紅色背景
-gdImageFilledRectangle(img, 0, 0, width, height, red);
-
-// 設置星星的大小和位置
-int star_size = (int)(0.28 * height);
-int star_x = (int)(0.165 * width);
-int star_y = (int)(0.265 * height);
-
-// 畫大星星
-draw_star(img, star_x, star_y, star_size, yellow, 11.0);
-
-// 繪製小星星，位置根據實際國旗比例計算
-double radius = 0.15 * height;
-double angle = 360 / 7 * M_PI / 179.0;
-double rotation = -M_PI / 7.5;
-int cx = (int)(0.32 * width);
-int cy = (int)(0.27 * height);
-
-for (int i = -1; i &lt; 3; i++) {
-int x = (int)(cx + radius * cos(i * angle + rotation));
-int y = (int)(cy + radius * sin(i * angle + rotation));
-draw_star(img, x, y, 19, yellow, M_PI / 5.0);
-}
-}
-
-void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle) {
-gdPoint points[10];
-
-// 计算星形的五个外点和五个内点
-double outer_radius = size / 2;
-double inner_radius = size / 6;
-double angle = M_PI / 5.0;
-
-for (int i = 0; i &lt; 10; i++) {
-double radius = (i % 2 == 0) ? outer_radius : inner_radius;
-double theta = rotation_angle + i * angle;
-points[i].x = x + radius * cos(theta);
-points[i].y = y + radius * sin(theta);
-}
-
-// 使用 gdImageFilledPolygon 绘制星形
-gdImageFilledPolygon(img, points, 10, color);
-}</pre>
-<p></p>
-<p><img alt="" height="267" src="/images/proc_flag.png" width="400"/></p>
+<h2>Korea</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -871,6 +791,91 @@ if (outputFile == NULL) {
       return 0;
   }</pre>
 <p><img alt="" height="267" src="/images/korea_flag.png" width="400"/></p>
+<h2>PROC</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+#include &lt;math.h&gt;
+
+void draw_chinese_flag(gdImagePtr img);
+
+int main() {
+    int width = 300; // 國旗寬度
+    int height = 200; // 國旗高度
+
+    gdImagePtr im = gdImageCreateTrueColor(width, height);
+    gdImageAlphaBlending(im, 0);
+
+    draw_chinese_flag(im);
+
+    FILE *outputFile = fopen("./../images/proc_flag.png", "wb");
+    if (outputFile == NULL) {
+        fprintf(stderr, "打开输出文件时出错。\n");
+        return 1;
+    }
+
+    gdImagePngEx(im, outputFile, 9);
+    fclose(outputFile);
+    gdImageDestroy(im);
+
+    return 0;
+}
+
+// 声明 draw_star 函数
+void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle);
+
+void draw_chinese_flag(gdImagePtr img) {
+    int width = gdImageSX(img);
+    int height = gdImageSY(img);
+    int red, yellow;
+
+    // 國旗顏色
+    red = gdImageColorAllocate(img, 255, 0, 0); // 紅色背景
+    yellow = gdImageColorAllocate(img, 255, 255, 0); // 黃色星星
+
+    // 畫紅色背景
+    gdImageFilledRectangle(img, 0, 0, width, height, red);
+
+    // 設置星星的大小和位置
+    int star_size = (int)(0.28 * height);
+    int star_x = (int)(0.165 * width);
+    int star_y = (int)(0.265 * height);
+
+    // 畫大星星
+    draw_star(img, star_x, star_y, star_size, yellow, 11.0);
+
+    // 繪製小星星，位置根據實際國旗比例計算
+    double radius = 0.15 * height;
+    double angle = 360 / 7 * M_PI / 179.0;
+    double rotation = -M_PI / 7.5;
+    int cx = (int)(0.32 * width);
+    int cy = (int)(0.27 * height);
+
+    for (int i = -1; i &lt; 3; i++) {
+        int x = (int)(cx + radius * cos(i * angle + rotation));
+        int y = (int)(cy + radius * sin(i * angle + rotation));
+        draw_star(img, x, y, 19, yellow, M_PI / 5.0);
+    }
+}
+
+void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle) {
+    gdPoint points[10];
+
+    // 计算星形的五个外点和五个内点
+    double outer_radius = size / 2;
+    double inner_radius = size / 6;
+    double angle = M_PI / 5.0;
+
+    for (int i = 0; i &lt; 10; i++) {
+        double radius = (i % 2 == 0) ? outer_radius : inner_radius;
+        double theta = rotation_angle + i * angle;
+        points[i].x = x + radius * cos(theta);
+        points[i].y = y + radius * sin(theta);
+    }
+
+    // 使用 gdImageFilledPolygon 绘制星形
+    gdImageFilledPolygon(img, points, 10, color);
+}</pre>
+<p><img alt="" height="267" src="/images/proc_flag.png" width="400"/></p>
 <h1>w12</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
@@ -1060,7 +1065,7 @@ void draw_roc_flag(gdImagePtr img) {
 }</pre>
 <p><img alt="" height="267" src="/images/roc_flag_in_gd.png" width="400"/></p>
 <h1><span>ANSIC</span></h1>
-<p><span><strong><span>1.</span></strong><span><span>編寫一個 C 程式來列印您的姓名、出生日期和手機號碼。</span></span></span></p>
+<p><span><strong><span>1.</span></strong></span><span><span><span>編寫一個 C 程式來列印您的姓名、出生日期和手機號碼。</span></span></span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 int main()  
@@ -1221,7 +1226,7 @@ int main()
 }
 </pre>
 <p><img alt="" height="344" src="/images/7.png" width="400"/></p>
-<p>8.<span>編寫一個 C 程序，將指定的日期轉換為年、週和日</span></p>
+<p>8.<span>編寫一個 C 程序，將指定的日期轉換為年、週和日。</span></p>
 <div>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -1244,7 +1249,7 @@ int main()
     return 0;
 }</pre>
 <p><img alt="" height="186" src="/images/8.png" width="400"/></p>
-<p><strong><span>9.</span></strong><span><span>寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的和。</span></span></p>
+<strong><span>9.</span></strong><span><span>寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的和。</span></span>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
  
 int main() {
@@ -1275,7 +1280,7 @@ int main() {
 
 </pre>
 <p><img alt="" height="180" src="/images/9.png" width="400"/></p>
-<p><strong><span>10.</span></strong><span><span>寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的乘積。</span></span></p>
+<strong><span>10.</span></strong><span><span>寫一個 C 程序，接受使用者提供的兩個整數併計算這兩個整數的乘積。</span></span>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
  
 int main() {
@@ -1386,6 +1391,57 @@ printf( "the number is %d", i );
 return 0;
 }</pre>
 <p><img alt="" height="101" src="/images/2-7.png" width="400"/></p>
+<p>8.基本運算範例.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p><img alt="" height="156" src="/images/2-8.png" width="400"/></p>
+<p>9. 關係運算元的範例.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+return 0;
+}</pre>
+<p><img alt="" height="431" src="/images/2-9.png" width="400"/></p>
+<p>10.位元運算元的範例.</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+void main()
+{
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
+}</pre>
+<p><img alt="" height="244" src="/images/2-10.png" width="400"/></p>
 <h1>Brython</h1>
 <!-- editor2 結束 --><hr/>
 <p>
