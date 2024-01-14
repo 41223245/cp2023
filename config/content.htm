@@ -1005,18 +1005,19 @@ int main() {
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
-
-void draw_roc_flag(gdImagePtr img);
-
+ 
+void draw_roc_flag(gdImagePtr img, int line_thickness);
+ 
 int main() {
     int width = 1200;
     int height = (int)(width * 2.0 / 3.0);
-
+ 
     gdImagePtr img = gdImageCreateTrueColor(width, height);
     gdImageAlphaBlending(img, 0);
-
-    draw_roc_flag(img);
-
+ 
+    int line_thickness = 4;  // 修改線條粗度為 4
+    draw_roc_flag(img, line_thickness);
+ 
     FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");
     if (outputFile == NULL) {
         fprintf(stderr, "Error opening the output file.\n");
@@ -1027,8 +1028,8 @@ int main() {
     gdImageDestroy(img);
     return 0;
 }
-
-void draw_roc_flag(gdImagePtr img) {
+ 
+void draw_roc_flag(gdImagePtr img, int line_thickness) {
     int width = gdImageSX(img);
     int height = gdImageSY(img);
     int red, white, blue;
@@ -1037,20 +1038,23 @@ void draw_roc_flag(gdImagePtr img) {
     int sun_radius = (int)(width / 8);
     int white_circle_dia = sun_radius;
     int blue_circle_dia = white_circle_dia + white_circle_dia * 2 / 15;
-
+ 
     red = gdImageColorAllocate(img, 255, 0, 0);
     white = gdImageColorAllocate(img, 255, 255, 255);
     blue = gdImageColorAllocate(img, 0, 0, 149);
-
+ 
     gdImageFilledRectangle(img, 0, 0, width, height, red);
     gdImageFilledRectangle(img, 0, 0, (int)(width / 2.0), (int)(height / 2.0), blue);
-
+ 
     // 利用一個藍色大圓與白色小圓畫出藍色環狀
     gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);
     gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white);
-
+ 
+    // 設定線條粗度
+    gdImageSetThickness(img, line_thickness);
+ 
     // 不含太陽的部分
-
+ 
     // 連接第二組ABED的白線
     int ax = 429;
     int ay = 125;
@@ -1060,12 +1064,13 @@ void draw_roc_flag(gdImagePtr img) {
     int ey = 274;
     int dx = 170;
     int dy = 274;
-
+ 
     gdImageLine(img, ax, ay, bx, by, white);
     gdImageLine(img, bx, by, ex, ey, white);
     gdImageLine(img, ex, ey, dx, dy, white);
     gdImageLine(img, dx, dy, ax, ay, white);
-}</pre>
+}
+</pre>
 <p><img alt="" height="267" src="/images/roc_flag_in_gd.png" width="400"/></p>
 <h1>ANSIC</h1>
 <p><span><strong><span>1.</span></strong></span><span><span><span>編寫一個 C 程式來列印您的姓名、出生日期和手機號碼。</span></span></span></p>

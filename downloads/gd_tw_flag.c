@@ -2,7 +2,7 @@
 #include <gd.h>
 #include <math.h>
 
-void draw_roc_flag(gdImagePtr img);
+void draw_roc_flag(gdImagePtr img, int line_thickness);
 
 int main() {
     int width = 1200;
@@ -11,7 +11,8 @@ int main() {
     gdImagePtr img = gdImageCreateTrueColor(width, height);
     gdImageAlphaBlending(img, 0);
 
-    draw_roc_flag(img);
+    int line_thickness = 4;  // 修改線條粗度為 4
+    draw_roc_flag(img, line_thickness);
 
     FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");
     if (outputFile == NULL) {
@@ -24,7 +25,7 @@ int main() {
     return 0;
 }
 
-void draw_roc_flag(gdImagePtr img) {
+void draw_roc_flag(gdImagePtr img, int line_thickness) {
     int width = gdImageSX(img);
     int height = gdImageSY(img);
     int red, white, blue;
@@ -44,6 +45,9 @@ void draw_roc_flag(gdImagePtr img) {
     // 利用一個藍色大圓與白色小圓畫出藍色環狀
     gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);
     gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white);
+
+    // 設定線條粗度
+    gdImageSetThickness(img, line_thickness);
 
     // 不含太陽的部分
 
